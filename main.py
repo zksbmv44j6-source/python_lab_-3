@@ -50,6 +50,25 @@ def another_example():
 
 another_example()
 
-print(local_var)
+# print(local_var)
+
+numbers = [15, 8, 23, 42, 4, 16, 9, 31, 7, 50]
+
+print("Первый элемент:", numbers[0])
+print("Третий элемент:", numbers[2])
+print("Последний элемент:", numbers[-1])
+
+numbers[1] = 100
+print("После изменения второго элемента:", numbers)
+
+numbers.append(77)
+print("После append(77):", numbers)
+
+numbers.remove(42)
+print("После remove(42):", numbers)
+
+
+print("Итоговый список:", numbers)
+print("Количество элементов:", len(numbers))
 
 
