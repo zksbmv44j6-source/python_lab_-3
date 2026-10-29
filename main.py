@@ -35,4 +35,21 @@ def describe_rectangle(width, height, unit="см"):
 describe_rectangle(10, 5)
 describe_rectangle(20, 15, "дюймов")
 
+value = 10
+
+def example():
+    
+    value = 20
+    print("Внутри функции:", value)
+
+example()
+print("Снаружи функции:", value)
+def another_example():
+    local_var = 42
+    print("Внутри функции:", local_var)
+
+another_example()
+
+print(local_var)
+
 
