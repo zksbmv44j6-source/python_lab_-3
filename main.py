@@ -124,3 +124,103 @@ print("Исходный список после sorted:", numbers)  # не из�
 # sort() изменяет сам список
 numbers.sort()
 print("После sort() исходный список:", numbers)
+
+def calculate_sum(numbers):
+    total = 0
+    for num in numbers:
+        total = total + num
+    return total
+
+def find_min(numbers):
+    minimum = numbers[0]  
+    for num in numbers:
+        if num < minimum:
+            minimum = num
+    return minimum
+
+def find_max(numbers):
+    maximum = numbers[0]
+    for num in numbers:
+        if num > maximum:
+            maximum = num
+    return maximum
+
+test_numbers = [5, 2, 9, 1, 7]
+
+print("Своя сумма:", calculate_sum(test_numbers), "| Встроенная sum:", sum(test_numbers))
+print("Свой минимум:", find_min(test_numbers), "| Встроенная min:", min(test_numbers))
+print("Свой максимум:", find_max(test_numbers), "| Встроенная max:", max(test_numbers)) 
+ 
+def find_element(numbers, target):
+    for i in range(len(numbers)):
+        if numbers[i] == target:
+            return i 
+    return -1  
+
+test_list = [10, 20, 30, 40, 50]
+print("Индекс 30:", find_element(test_list, 30))  
+
+print("Индекс 99:", find_element(test_list, 99)) 
+
+def analyze(numbers):
+    minimum = find_min(numbers)
+    maximum = find_max(numbers)
+    average = calculate_sum(numbers) / len(numbers)
+    return minimum, maximum, average  
+
+test_data = [10, 20, 30, 40, 50]
+min_val, max_val, avg_val = analyze(test_data)
+
+print("Минимум:", min_val)
+print("Максимум:", max_val)
+print("Среднее:", avg_val)
+
+numbers = [-10, 3, -2, 8, -5]
+
+normal_sorted = sorted(numbers)
+print("Обычная сортировка:", normal_sorted)  
+
+abs_sorted = sorted(numbers, key=lambda x: abs(x))
+print("Сортировка по модулю:", abs_sorted) 
+
+def calculate_average(measurements):
+    total = 0
+    for m in measurements:
+        total += m 
+    return total / len(measurements)
+
+def find_minimum(measurements):
+    minimum = measurements[0]
+    for m in measurements:
+        if m < minimum:
+            minimum = m
+    return minimum
+
+def find_maximum(measurements):
+    maximum = measurements[0]
+    for m in measurements:
+        if m > maximum:
+            maximum = m
+    return maximum
+
+def count_above_average(measurements):
+    avg = calculate_average(measurements)
+    count = 0
+    for m in measurements:
+        if m > avg:
+            count += 1
+    return count
+
+def find_value(measurements, target):
+    for i in range(len(measurements)):
+        if measurements[i] == target:
+            return i
+    return -1
+
+def analyze_measurements(measurements):
+    return find_minimum(measurements), find_maximum(measurements), calculate_average(measurements)
+
+measurements = [12.5, 18.3, 7.1, 22.8, 15.0, 9.9, 30.2, 11.4, 25.6, 13.7, 19.1, 8.8]
+
+print("=== АНАЛИЗ ИЗМЕРЕНИЙ ===")
+print("Количество измерений:", len(measurements))
