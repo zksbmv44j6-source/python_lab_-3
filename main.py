@@ -73,18 +73,54 @@ print("Количество элементов:", len(numbers))
 
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
-# Первые три элемента (индексы 0,1,2)
 print("Первые три:", numbers[:3])
 
-# Последние три элемента
 print("Последние три:", numbers[-3:])
 
-# Элементы с 3-го по 7-й (индексы 2,3,4,5,6)
 print("С 3-го по 7-й:", numbers[2:7])
 
-# Каждый второй элемент (индексы 0,2,4,...)
 print("Каждый второй:", numbers[::2])
 
-# Список в обратном порядке
 print("Обратный порядок:", numbers[::-1])
 
+measurements = (12.5, 18.3, 7.1, 22.8, 15.0, 9.9, 30.2, 11.4)
+
+print("Первый:", measurements[0])
+print("Последний:", measurements[-1])
+
+print("Срез [1:4]:", measurements[1:4])
+
+#measurements[0] = 99
+
+first, second = measurements[0], measurements[1]
+print("Первое значение:", first)
+print("Второе значение:", second)
+
+temp_list = list(measurements)
+print("Список:", temp_list)
+
+temp_list[0] = 99
+print("Изменённый список:", temp_list)
+
+new_measurements = tuple(temp_list)
+print("Новый кортеж:", new_measurements)
+# Используем тот же список numbers из задания 4
+numbers = [15, 100, 23, 4, 16, 9, 31, 7, 50, 77]  # (без 42, с 100 и 77)
+
+print("Количество:", len(numbers))
+print("Сумма:", sum(numbers))
+print("Минимум:", min(numbers))
+print("Максимум:", max(numbers))
+
+# Среднее = сумма / количество
+average = sum(numbers) / len(numbers)
+print("Среднее:", average)
+
+# sorted() возвращает новый отсортированный список (исходный не меняется)
+sorted_copy = sorted(numbers)
+print("Отсортированная копия (sorted):", sorted_copy)
+print("Исходный список после sorted:", numbers)  # не изменился!
+
+# sort() изменяет сам список
+numbers.sort()
+print("После sort() исходный список:", numbers)
