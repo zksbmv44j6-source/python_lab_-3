@@ -14,7 +14,15 @@ def main():
     logs_dir = Path("logs")
     logs_dir.mkdir(exist_ok=True)
 
-    numbers = read_numbers(input_file)
+    try:
+        numbers = read_numbers(input_file)
+    except FileNotFoundError:
+        print("Файл не найден")
+        return
+    except ValueError as error:
+        print("Ошибка в данных:", error)
+        return
+
     print("Количество значений:", len(numbers))
     print("Минимум:", find_min(numbers))
     print("Максимум:", find_max(numbers))
