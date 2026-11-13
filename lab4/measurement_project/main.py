@@ -20,12 +20,9 @@ def main():
         encoding="utf-8",
     )
     logging.info("Программа запущена")
-
-    print("Рабочий каталог:", Path.cwd())
+    logging.info(f"Рабочий каталог: {Path.cwd()}")
 
     input_file = Path(config["input_file"])
-    print("Путь к файлу:", input_file)
-    print("Файл существует:", input_file.exists())
 
     try:
         numbers = read_numbers(input_file)
