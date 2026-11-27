@@ -1,8 +1,12 @@
 from models.vehicle import Vehicle
+from models.car import Car
 
-car = Vehicle("Toyota", "Camry", 2024)
-print(car)
+car = Car("Toyota", "Camry", 2024, 4)
 
+print(car.doors)
 car.accelerate(60)
+car.brake(20)
+print(car.speed)
+print(car.get_info())
 print(car)
-print(f"В гараже: {car}")
+print(isinstance(car, Car), isinstance(car, Vehicle))
