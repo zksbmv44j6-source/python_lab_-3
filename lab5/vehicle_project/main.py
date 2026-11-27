@@ -1,12 +1,15 @@
-from models.vehicle import Vehicle
 from models.car import Car
+from models.truck import Truck
+from models.motorcycle import Motorcycle
 
 car = Car("Toyota", "Camry", 2024, 4)
+truck = Truck("КАМАЗ", "54901", 2023, 20)
+moto1 = Motorcycle("Урал", "Турист", 2022, True)
+moto2 = Motorcycle("Honda", "Shadow", 2021, False)
 
-print(car.doors)
-car.accelerate(60)
-car.brake(20)
-print(car.speed)
-print(car.get_info())
+truck.accelerate(40)
+
 print(car)
-print(isinstance(car, Car), isinstance(car, Vehicle))
+print(truck)
+print(moto1)
+print(moto2)
