@@ -26,3 +26,6 @@ class Vehicle:
 
     def stop(self):
         self.speed = 0
+
+    def __str__(self):
+        return f"{self.get_info()}, скорость: {self.speed} км/ч"
